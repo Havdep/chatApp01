@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+body {
+    background: linear-gradient(45deg, #020024, #090979, #00d4ff);
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+}
+
+.app-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.user-section {
+    width: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.7);
+}
+
+.user-header {
+    padding: 15px;
+    background: linear-gradient(45deg, #00d4ff, #090979);
+    text-align: center;
+    font-size: 20px;
+    border-radius: 15px 0 0 0;
+}
+
+.user-list {
+    list-style: none;
+    padding: 10px;
+}
+
+.user-list li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.user-list li:last-child {
+    border-bottom: none;
+}
+
+
+/* Chat Container Styling */
+
+.chat-container {
+    width: 800px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.7);
+}
+
+.chat-header {
+    padding: 15px;
+    background: linear-gradient(45deg, #00d4ff, #090979);
+    text-align: center;
+    font-size: 24px;
+    border-radius: 0 15px 0 0;
+}
+
+.chat-messages {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    height: 400px;
+    overflow: auto;
+}
+
+.chat-messages li {
+    padding: 10px 20px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #00d4ff, #090979);
+    border-radius: 0 0 15px 15px;
+}
+
+.chat-footer input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.7);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.chat-footer button {
+    padding: 10px 20px;
+    margin-left: 20px;
+    background: rgba(0, 212, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.chat-footer button:hover {
+    background: rgba(0, 212, 255, 1);
+}
+
+
+/* Responsiveness */
+
+@media (max-width: 1000px) {
+    .app-container {
+        flex-direction: column;
+        align-items: center;
+        max-width: 600px;
+        margin: 0;
+    }
+    .user-section {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .chat-container {
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+        width: 100%;
+    }
+    .chat-messages {
+        height: calc(100vh - 300px);
+    }
+}
