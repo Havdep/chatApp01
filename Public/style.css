@@ -2,7 +2,7 @@
 body {
     background: linear-gradient(45deg, #020024, #090979, #00d4ff);
     margin: 0;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     color: #fff;
 }
 
@@ -80,7 +80,7 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(45deg, #00d4ff, #090979);
+    background: linear-gradient(45deg, #000001, #362bb3);
     border-radius: 0 0 15px 15px;
 }
 
