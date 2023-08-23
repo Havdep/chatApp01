@@ -24,20 +24,37 @@ function updateUsersList(users) {
   });
 }
 
+function handleCommand(command, username) {
+  switch (command) {
+    case "/hello":
+      return username + " says hello!";
+    case "/weather":
+      return "The weather is nice today!"; // You could implement a real weather check here
+    case "/time":
+      return "look at the clock for time"; // You could implement a real weather check here
+    // Add more cases for other commands
+    default:
+      return "Unknown command.";
+  }
+}
+
 function sendMessage() {
   const usernameInput = document.getElementById("username");
   const messageInput = document.getElementById("message");
   const username = usernameInput.value.trim();
-  const message = messageInput.value.trim();
+  let message = messageInput.value.trim();
 
   if (username === "" || message === "") return;
 
-  // Call replaceWordsWithEmojis function to modify the message
-  const emojiMessage = replaceWordsWithEmojis(message);
+  if (message.startsWith("/")) {
+    message = handleCommand(message, username); // Call the handleCommand function
+  } else {
+    message = replaceWordsWithEmojis(message);
+  }
 
-  socket.emit("new user", username); // Send username to the server
-  socket.emit("chat message", { username, message: emojiMessage }); // Use emojiMessage here
-  appendMessage("You", emojiMessage); // And here
+  socket.emit("new user", username);
+  socket.emit("chat message", { username, message });
+  appendMessage("You", message);
   messageInput.value = "";
 }
 
