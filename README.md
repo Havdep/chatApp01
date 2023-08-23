@@ -6,7 +6,7 @@ This is a real-time chat application built using Node.js and Socket.io. It inclu
 ## Features
 - Real-time messaging
 - Emoji support: Replace certain words with emojis. For example:
-    - hello: "😁"
+   
     - hi: "こんいちは"
     - hru: "元気ですか"
     - bye: "さようなら"
