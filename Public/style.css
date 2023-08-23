@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 body {
     background: linear-gradient(45deg, #020024, #090979, #00d4ff);
     margin: 0;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Black Ops One', cursive;
     color: #fff;
 }
 

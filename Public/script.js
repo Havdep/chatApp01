@@ -32,10 +32,34 @@ function sendMessage() {
 
   if (username === "" || message === "") return;
 
+  // Call replaceWordsWithEmojis function to modify the message
+  const emojiMessage = replaceWordsWithEmojis(message);
+
   socket.emit("new user", username); // Send username to the server
-  socket.emit("chat message", { username, message });
-  appendMessage("You", message);
+  socket.emit("chat message", { username, message: emojiMessage }); // Use emojiMessage here
+  appendMessage("You", emojiMessage); // And here
   messageInput.value = "";
+}
+
+function replaceWordsWithEmojis(message) {
+  const emojiMap = {
+    // hello: "😁",
+    // sad: "🥴",
+    hi: "こんいちは",
+    hru: "元気ですか",
+    bye: "さようなら",
+    // hey: "HEY", // Add the emoji you want for 'hey' here
+  };
+
+  const words = message.split(" ");
+
+  for (let i = 0; i < words.length; i++) {
+    if (emojiMap[words[i].toLowerCase()]) {
+      words[i] = emojiMap[words[i].toLowerCase()];
+    }
+  }
+
+  return words.join(" ");
 }
 
 // Receive messages from the server
