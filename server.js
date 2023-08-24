@@ -8,6 +8,8 @@ const io = socketIo(server);
 
 const users = {}; // Keep track of users
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
