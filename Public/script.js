@@ -1,3 +1,13 @@
+window.onload = function () {
+  window.username = prompt("Please enter your username:");
+  document.getElementById("username").value = window.username;
+
+  alert(
+    "Emoji Changes:  hi: こんいちは\nhru: 元気ですか\nbye: さようなら\n\n" +
+      "Slash Commands:\n/hello: Says hello\n/weather: Shows weather info\n/time: Shows time"
+  );
+};
+window.username = username;
 const socket = io();
 
 document.getElementById("message").addEventListener("keydown", (event) => {
