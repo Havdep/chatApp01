@@ -29,25 +29,23 @@ function handleCommand(command, username) {
     case "/hello":
       return username + " says hello!";
     case "/weather":
-      return "The weather is nice today!"; // You could implement a real weather check here
+      return "The weather is nice today!";
     case "/time":
-      return "look at the clock for time"; // You could implement a real weather check here
-    // Add more cases for other commands
+      return "Look at the clock for time";
     default:
       return "Unknown command.";
   }
 }
 
 function sendMessage() {
-  const usernameInput = document.getElementById("username");
   const messageInput = document.getElementById("message");
-  const username = usernameInput.value.trim();
+  const username = window.username; // Use the username from the window object
   let message = messageInput.value.trim();
 
   if (username === "" || message === "") return;
 
   if (message.startsWith("/")) {
-    message = handleCommand(message, username); // Call the handleCommand function
+    message = handleCommand(message, username);
   } else {
     message = replaceWordsWithEmojis(message);
   }
@@ -60,12 +58,9 @@ function sendMessage() {
 
 function replaceWordsWithEmojis(message) {
   const emojiMap = {
-    // hello: "😁",
-    // sad: "🥴",
     hi: "こんいちは",
     hru: "元気ですか",
     bye: "さようなら",
-    // hey: "HEY", // Add the emoji you want for 'hey' here
   };
 
   const words = message.split(" ");
